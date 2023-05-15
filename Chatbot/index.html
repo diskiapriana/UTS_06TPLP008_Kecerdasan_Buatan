@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot</title>
+
+  <!-- link css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+  <!-- ajax -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="window">
+      <div class="title">
+        <p>Chatbot</p>
+      </div>
+      <div class="form">
+        <div class="bot-message">
+          <div class="icon"><i class="bi bi-robot"></i></div>
+          <div class="message">
+            <p>adakah yang bisa saya bantu ?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-message">
+        <div class="input">
+          <input type="text" id="input" placeholder="ketik pesan..">
+          <button id="send-btn">kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- script -->
+  <script>
+    $(document).ready(function(){
+      $("#send-btn").on("click", function(){
+        // ambil data
+        $input = $("#input").val();
+
+        // masukkan data ke form
+        $message = '<div class="user-message"><p>' + $input + '</p></div>';
+
+        // masukkan data
+        $('.form').append($message);
+
+        // hapus pesan yang sudah di kirim
+        $('#input').val('');
+
+        // ajax
+        $.ajax({
+          url : 'pesan.php',
+          type : 'POST',
+          data : 'pesan=' + $input,
+          success : function(result){
+            // jika sukses minta balasan
+            $balasan = '<div class="bot-message"><div class="icon"><i class="bi bi-robot"></i></div><div class="message"><p>' + result + '</p></div></div>';
+
+            // masukkan ke form
+            $(".form").append($balasan);
+
+            // scroll pesan ke ke bawah setelah mengirim
+            $(".form").scrollTop($(".form")[0].scrollHeight);
+          }
+        });
+      });
+    })
+  </script>
+</body>
+</html>

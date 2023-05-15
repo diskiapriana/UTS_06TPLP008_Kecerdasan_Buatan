@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300&family=Comfortaa:wght@300;700&family=Nunito:wght@200&family=Roboto+Mono:wght@300&display=swap');
+
+*{
+  font-family: 'Anek Devanagari', sans-serif;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window{
+  box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+  margin-top: 30px;
+  border-radius: 10px;
+  width: 400px;
+  height: 500px;
+}
+
+.title{
+  text-align: center;
+  background-color: lightcyan;
+  padding: 5px;
+  font-size: 1.3rem;
+}
+
+.form{
+  height: 380px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.bot-message{
+  display: flex;
+  padding: 5px;
+}
+
+.bot-message .icon i{
+  font-size: 1.8rem;
+  background-color: lightgray;
+  border-radius: 50%;
+  padding: 10px;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.message p{
+  margin-left: 10px;
+  background-color: lightcyan;
+  padding: 5px;
+  margin-top: 9px;
+  border-radius: 10px;
+}
+
+.user-message{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-message p{
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.input-message{
+  background-color: lightgray;
+  padding: 5px;
+}
+
+.input input{
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+  font-size: 1.2rem;
+}
+
+.input button{
+  padding: 5px 11px;
+  font-size: 1.2rem;
+  background-color: lightcyan;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.input button:hover{
+  background-color: aqua;
+}
+
+footer{
+  text-transform: capitalize;
+  margin-top: 70px;
+}
